@@ -315,6 +315,10 @@ p.works img:hover {
   opacity: 0.6; /* 40％ほど透過させる */
 }
 
+iframe.works-frame {
+  max-width: 100%;
+}
+
 img.works {
   width: 100%;
   height: 100%;
