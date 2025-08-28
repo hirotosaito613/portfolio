@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -29,11 +29,18 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-        
-        
 
+        <style>
+            body { font-family: sans-serif;}
+            .lang-toggle { cursor: pointer; text-decoration: underline; color: gray; margin: 0 0.3em; }
+            .lang-toggle.disabled { color: white !important; cursor: default; text-decoration: none; pointer-events: none; }
+            .lang-text[data-lang='en'] { display: none; }
+        </style>
+        <!DOCTYPE html>
+        
     </head>
     <body id="page-top">
+     
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top">
@@ -54,19 +61,25 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#publications">Publications</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-                    
+                    <br>
+                    <span class="lang-toggle" data-toggle="ja" id="toggle-ja">日本語</span> 
+                    <span class="lang-toggle" data-toggle="en" id="toggle-en">English</span>
                 </ul>
             </div>
         </nav>
+        
 
         <!-- Page Content-->
         <div class="container-fluid p-0">
             <!-- About-->
             <section class="resume-section" id="home">
+               
                 <div class="resume-section-content">
                     <h3 class="mb-6">
-                        齊藤 寛人 / Hiroto Saito
+                        <span class="lang-text" data-lang="ja">齊藤 寛人 / Hiroto Saito</span>
+                        <span class="lang-text" data-lang="en">Hiroto Saito</span>
                     </h3>
+                
                     <p>
                     <img src="assets/img/profile.png" class="profile" />
                         </p>
@@ -77,11 +90,16 @@
                     </p>
 
                     <p class="lead mb-5">
-                        2019年明治大学大学院先端数理科学研究科博士後期課程修了．
-                        2019年東京大学先端科学技術研究センター特任研究員，2022年東京大学先端科学技術研究センター特任助教，2023年東京大学先端科学技術研究センター助教，現在に至る．
-                        運動学習・運動知覚およびそれらの特性を利用したヒューマンコンピュータインタラクションの設計に関する研究に従事．
-                        博士（理学）．
-                        ACM・情報処理学会・VR学会・認知科学会・モーターコントロール研究会各会員．
+                        <span class="lang-text" data-lang="ja">
+                            2019年明治大学大学院先端数理科学研究科博士後期課程修了．
+                            2019年東京大学先端科学技術研究センター特任研究員，2022年東京大学先端科学技術研究センター特任助教，2023年東京大学先端科学技術研究センター助教，現在に至る．
+                            運動学習・運動知覚およびそれらの特性を利用したヒューマンコンピュータインタラクションの設計に関する研究に従事．
+                            博士（理学）．
+                            ACM・情報処理学会・VR学会・認知科学会・モーターコントロール研究会各会員．
+                        </span>
+                        <span class="lang-text" data-lang="en">
+                            <br><br>    
+                        </span>
                     </p>
                 
             
@@ -90,7 +108,11 @@
                     <br  id = "works"/>
             
             
-                    <h3 class="mb-5">Works</h3>
+                    <h3 class="mb-5">
+                        <span class="lang-text" data-lang="ja">Works</span>
+                        <span class="lang-text" data-lang="en">Works</span>
+
+                    </h3>
 
                     <div class="works">
 
@@ -373,36 +395,89 @@
             <!-- Education-->
             <section class="resume-section" id="education">
                 <div class="resume-section-content">
-                    <h3 class="mb-5">略歴 - Education</h3>
+                    <h3 class="mb-5">
+                        <span class="lang-text" data-lang="ja">略歴 - Education</span>
+                        <span class="lang-text" data-lang="en">Education</span>
+                    </h3>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">明治大学大学院先端数理科学研究科博士後期課程</h5>
-                            <p>先端メディアサイエンス専攻</p>
+                            <span class="lang-text" data-lang="ja">
+                                <h5 class="mb-0">明治大学大学院先端数理科学研究科博士後期課程</h5>
+                                <p>先端メディアサイエンス専攻</p>
+                            </span>
+                            <span class="lang-text" data-lang="en">
+                                <h5 class="mb-0">Meiji University</h5>
+                                <p>Ph.D. in Science</p>
+                                <p>Frontier Media Science Program, Graduate School of Advanced Mathematical Sciences</p>
+                            </span>
                         </div>
-                        <div class="flex-shrink-0"><h5 class="text-primary">2017 - 2019</h5></div>
+                        <div class="flex-shrink-0">
+                            <h5 class="text-primary">
+                                <span class="lang-text" data-lang="en">Tokyo, Japan</span>
+                                <p>2017 - 2019</p>
+                            </h5>
+                        </div>
                     </div>
 
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">明治大学大学院理工学研究科博士後期課程</h5>
-                            <p>新領域創造専攻 ディジタルコンテンツ系</p>
+                            <span class="lang-text" data-lang="ja">
+                                <h5 class="mb-0">明治大学大学院理工学研究科博士後期課程</h5>
+                                <p>新領域創造専攻 ディジタルコンテンツ系</p>
+                            </span>
+                            <span class="lang-text" data-lang="en">
+                                <h5 class="mb-0">Meiji University</h5>
+                                <p>Graduate School of Science and Technology (Ph.D. program)</p>
+                            </span>
+                            
                         </div>
-                        <div class="flex-shrink-0"><h5 class="text-primary">2016 - 2017</h5></div>
+                        <div class="flex-shrink-0">
+                            <h5 class="text-primary">
+                                <span class="lang-text" data-lang="en">Tokyo, Japan</span>
+                                <p>2016 - 2017</p>
+                            </h5>
+                        </div>
                     </div>
 
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">明治大学大学院理工学研究科博士前期課程</h5>
-                            <p>新領域創造専攻 ディジタルコンテンツ系</p>
+                            <span class="lang-text" data-lang="ja">
+                                <h5 class="mb-0">明治大学大学院理工学研究科博士前期課程</h5>
+                                <p>新領域創造専攻 ディジタルコンテンツ系</p>
+                            </span>    
+                            <span class="lang-text" data-lang="en">
+                                <h5 class="mb-0"><b>Meiji University</b></h5>
+                                <p>M.Sc. in Computer Science<p>
+                                <p>Graduate School of Science and Technology</p>
+                               
+                            </span>
                         </div>
-                        <div class="flex-shrink-0"><h5 class="text-primary">2014 - 2016</h5></div>
+                        <div class="flex-shrink-0">
+                            <h5 class="text-primary">
+                                <span class="lang-text" data-lang="en">Tokyo, Japan</span>
+                                <p>2014 - 2016</p>
+                            </h5>
+                        </div>
                     </div>
 
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">明治大学理工学部情報科学科</h5>
+                            <span class="lang-text" data-lang="ja">
+                                <h5 class="mb-0">明治大学理工学部情報科学科</h5>
+                            </span>    
+                            <span class="lang-text" data-lang="en">
+                                <h5 class="mb-0">Meiji University</h5>
+                                <p>B.Sc. in Computer Science</p>
+                                <p>School of Science and Technology</p>
+                            </span>
+                            
                         </div>
-                        <div class="flex-shrink-0"><h5 class="text-primary">2010 - 2014</h5></div>
+                        <div class="flex-shrink-0">
+                            <h5 class="text-primary">
+                                <span class="lang-text" data-lang="en">Tokyo, Japan</span>
+                                <p>2010 - 2014</p>
+                            </h5>
+                        </div>
                     </div>
                    
                    
@@ -411,36 +486,85 @@
 
                      <!-- Experience-->
                     <hr class="m-5"  id = "experience"/>
-                    <h3 class="mb-5">職歴 - Experience</h3>
+                    <h3 class="mb-5">
+                        <span class="lang-text" data-lang="ja">職歴 - Experience</span>
+                        <span class="lang-text" data-lang="en">Experience</span>
+                    </h3>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">東京大学先端科学技術研究センター 助教</h5>
+                            <span class="lang-text" data-lang="ja">
+                                <h5 class="mb-0">東京大学先端科学技術研究センター 助教</h5>
+                            </span>
+                             <span class="lang-text" data-lang="en">
+                                <h5 class="mb-0">RCAST, University of Tokyo</h5>
+                                <p>Assistant Professor</p>
+                             </span>
                         </div>
-                        <div class="flex-shrink-0"><h5 class="text-primary">2023 - present</h5></div>
+                        <div class="flex-shrink-0"><h5 class="text-primary">
+                            <span class="lang-text" data-lang="en">Tokyo, Japan</span>
+                            <p>2023 - present</p>
+                        </h5></div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">東京大学先端科学技術研究センター 特任助教</h5>
+                            <span class="lang-text" data-lang="ja">
+                                <h5 class="mb-0">東京大学先端科学技術研究センター 特任助教</h5>
+                            </span>
+                             <span class="lang-text" data-lang="en">
+                                <h5 class="mb-0">RCAST, University of Tokyo</h5>
+                                <p>Project Assistant Professor</p>
+                             </span>
                         </div>
-                        <div class="flex-shrink-0"><h5 class="text-primary">2022 - 2023</h5></div>
+                        <div class="flex-shrink-0"><h5 class="text-primary">
+                            <span class="lang-text" data-lang="en">Tokyo, Japan</span>
+                            <p>2022 - 2023</p>
+                        </h5></div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">東京大学先端科学技術研究センター 特任研究員</h5>
+                           <span class="lang-text" data-lang="ja">
+                                <h5 class="mb-0">東京大学先端科学技術研究センター 特任研究員</h5>
+                            </span>
+                             <span class="lang-text" data-lang="en">
+                                <h5 class="mb-0">RCAST, University of Tokyo</h5>
+                                <p>Project Researcher</p>
+                             </span>
                         </div>
-                        <div class="flex-shrink-0"><h5 class="text-primary">2019 - 2022</h5></div>
+                       <div class="flex-shrink-0"><h5 class="text-primary">
+                            <span class="lang-text" data-lang="en">Tokyo, Japan</span>
+                            <p>2019 - 2022</p>
+                        </h5></div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">明治大学総合数理学部 助手</h5>
+                            <span class="lang-text" data-lang="ja">
+                                <h5 class="mb-0">明治大学総合数理学部 助手</h5>
+                            </span>
+                             <span class="lang-text" data-lang="en">
+                                <h5 class="mb-0">School of Interdisciplinary Mathematical Sciences, Meiji University</h5>
+                                <p>Research Associate</p>
+                             </span>
                         </div>
-                        <div class="flex-shrink-0"><h5 class="text-primary">2017 - 2019</h5></div>
+                        <div class="flex-shrink-0"><h5 class="text-primary">
+                            <span class="lang-text" data-lang="en">Tokyo, Japan</span>
+                            <p>2017 - 2019</p>
+                        </h5></div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">明治大学理工学部 助手</h5>
+                            <span class="lang-text" data-lang="ja">
+                                <h5 class="mb-0">明治大学理工学部 助手</h5>
+                            </span>
+                             <span class="lang-text" data-lang="en">
+                                <h5 class="mb-0">School of Science and Technology, Meiji University</h5>
+                                <p>Research Associate</p>
+                             </span>
                         </div>
-                        <div class="flex-shrink-0"><h5 class="text-primary">2016 - 2017</h5></div>
+                        
+                        <div class="flex-shrink-0"><h5 class="text-primary">
+                            <span class="lang-text" data-lang="en">Tokyo, Japan</span>
+                            <p>2016 - 2017</p>
+                        </h5></div>
                     </div>
 
                 </div>
@@ -452,19 +576,34 @@
                 <div class="resume-section-content">
                     <h3 class="mb-5">Publications</h3>
     
-                     <h4 class="mb-3">査読付き学術論文 -  Peer Reviewed Journals</h4>
+                     <h4 class="mb-3"><span class="lang-text" data-lang="ja">査読付き学術論文 -  </span> Peer Reviewed Journals </h4>
                         <ul class="mb-5">
                             <li class="mb-2">
-                                門内 靖明, 村本 剛毅, 矢崎 武瑠, 内藤 竜治, 齊藤 寛人, 前川 和純, 稲見 昌彦. 共進化するテラヘルツ無線技術と人間拡張工学, <i>電子情報通信学会 通信ソサイエティマガジン</i>, 2024, Vol.18 No.2, pp.145-157. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1587/bplus.18.145" rel="nofollow">DOI</a>)
+                                <span class="lang-text" data-lang="ja">
+                                    門内 靖明, 村本 剛毅, 矢崎 武瑠, 内藤 竜治, 齊藤 寛人, 前川 和純, 稲見 昌彦. 共進化するテラヘルツ無線技術と人間拡張工学, <i>電子情報通信学会 通信ソサイエティマガジン</i>, 2024, Vol.18 No.2, pp.145-157. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1587/bplus.18.145" rel="nofollow">DOI</a>)
+                                </span>
+                                <span class="lang-text" data-lang="en">
+                                    Yasuaki Monnai, Goki Muramoto, Takeru Yazaki, Ryuji Naitou, Hiroto Saito, Azumi Maekawa, and Masahiko Inami.Co-evolution of Terahertz Wireless Technology and Human Augmentation Technology<i>IEICE Communications Society Magazine</i>, 2024, Vol.18 No.2, pp.145-157. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1587/bplus.18.145" rel="nofollow">DOI</a>, in Japanese)
+                                </span> 
                             </li>
                             <li class="mb-2">
                                 Hiroto Saito, Kentaro Fukuchi, Masahiko Inami, and Gowrishankar Ganesh. 2024. Visual background information modulates motor contagions in humans.  In <em>Scientific Reports</em>, 14, Article number: 18789. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1038/s41598-024-69535-9" rel="nofollow">DOI</a>)
                             </li>  
                             <li class="mb-2">
-                                本多 拓実, 齊藤 寛人, 脇坂 崇平, 稲見 昌彦. サッカーでのキック方向予測におけるニューラルネットワークを用いた判断根拠の教示システム, <i>日本バーチャルリアリティ学会論文誌</i>, 2022, Vol.27 No.4, pp.393-402. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.18974/tvrsj.27.4_393" rel="nofollow">DOI</a>)
+                                <span class="lang-text" data-lang="ja">
+                                     本多 拓実, 齊藤 寛人, 脇坂 崇平, 稲見 昌彦. サッカーでのキック方向予測におけるニューラルネットワークを用いた判断根拠の教示システム, <i>日本バーチャルリアリティ学会論文誌</i>, 2022, Vol.27 No.4, pp.393-402. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.18974/tvrsj.27.4_393" rel="nofollow">DOI</a>)
+                                </span>
+                                <span class="lang-text" data-lang="en">
+                                     Takumi Honda, Hiroto Saito, Sohei Wakisaka, and Masahiko Inami. Teaching System of Judgment Basis Using Neural Network on Predicting Kick Direction in Football, <i>Transactions of the Virtual Reality Society of Japan</i>, 2022, Vol.27 No.4, pp.393-402. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.18974/tvrsj.27.4_393" rel="nofollow">DOI</a>, in Japanese)
+                                </span> 
                             </li>
                             <li class="mb-2">
-                                高下 修聡, 荒井 謙, 齊藤 寛人, 稲見 昌彦. Kinematic Altering Illusion: タコ腕型 VR アバタの装用による柔らかい身体感の獲得, <i>日本バーチャルリアリティ学会論文誌</i>, 2022, Vol.27 No.4, pp.403-412. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.18974/tvrsj.27.4_403" rel="nofollow">DOI</a>)
+                                <span class="lang-text" data-lang="ja">
+                                    高下 修聡, 荒井 謙, 齊藤 寛人, 稲見 昌彦. Kinematic Altering Illusion: タコ腕型 VR アバタの装用による柔らかい身体感の獲得, <i>日本バーチャルリアリティ学会論文誌</i>, 2022, Vol.27 No.4, pp.403-412. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.18974/tvrsj.27.4_403" rel="nofollow">DOI</a>)         
+                                </span>
+                                <span class="lang-text" data-lang="en">
+                                    Shuto Takashita, Ken Arai, Hiroto Saito, and Masahiko Inami. Kinematic Altering Illusion : Acquiring soft body perception by wearing octopus arm-shaped VR avatar, <i>Transactions of the Virtual Reality Society of Japan</i>, 2022, Vol.27 No.4, pp.403-412. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.18974/tvrsj.27.4_403" rel="nofollow">DOI</a>, in Japanese)
+                                </span>  
                             </li>
                             <li class="mb-2">
                                 Ken Arai, Hiroto Saito, Masaaki Fukuoka, Sachiyo Ueda, Maki Sugimoto, Michiteru Kitazaki, and Masahiko Inami. 2022. Embodiment of supernumerary robotic limbs in virtual reality.  In <em>Scientific Reports</em>, 12, Article number: 9769. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1038/s41598-022-13981-w" rel="nofollow">DOI</a>)
@@ -473,17 +612,32 @@
                                 Hiroto Saito, Arata Horie, Azumi Maekawa, Seito Matsubara, Sohei Wakisaka, Zendai Kashino, Shunichi Kasahara, and Masahiko Inami. 2021. Transparency in Human-Machine Mutual Action.  In <em>Journal of Robotics and Mechatronics</em>, Vol.33, No.5, pp. 987-1003.(<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.20965/jrm.2021.p0987" rel="nofollow">DOI</a>)
                             </li>  
                             <li class="mb-2">
-                                堀江 新, 下林 秀輝, 齊藤 寛人, 稲見 昌彦. 回転の皮膚せん断変形に基づく分布型触覚ディスプレイの設計. <i>日本バーチャルリアリティ学会論文誌</i>, 2020, 25 巻, 4 号, p. 402-411. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.18974/tvrsj.25.4_402" rel="nofollow">DOI</a>)
+                                <span class="lang-text" data-lang="ja">
+                                    堀江 新, 下林 秀輝, 齊藤 寛人, 稲見 昌彦. 回転の皮膚せん断変形に基づく分布型触覚ディスプレイの設計. <i>日本バーチャルリアリティ学会論文誌</i>, 2020, Val.25, No.4, p. 402-411. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.18974/tvrsj.25.4_402" rel="nofollow">DOI</a>)         
+                                </span>
+                                <span class="lang-text" data-lang="en">
+                                    Arata Horie, Hideki Shimobayashi, Hiroto Saito, and Masahiko Inami. Designing Distributed-type Haptic Device based on Rotational Skin Stretch. <i>Transactions of the Virtual Reality Society of Japan/i>, 2020, Val.25, No.4, p. 402-411. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.18974/tvrsj.25.4_402" rel="nofollow">DOI</a>, in Japanese)
+                                </span> 
                             </li>
                             <li class="mb-2">
-                                齊藤 寛人, 福地 健太郎. 視覚的運動の予測可能性が自己帰属感の生起過程に及ぼす影響の調査, <i>ヒューマンインタフェース学会論文誌</i>, 2018, Vol.20, No.3, pp.301-310. (<a target="_blank" rel="noopener noreferrer" href="http://dx.doi.org/10.11184/his.20.3_301" rel="nofollow">DOI</a>)
+                                <span class="lang-text" data-lang="ja">
+                                    齊藤 寛人, 福地 健太郎. 視覚的運動の予測可能性が自己帰属感の生起過程に及ぼす影響の調査, <i>ヒューマンインタフェース学会論文誌</i>, 2018, Vol.20, No.3, pp.301-310. (<a target="_blank" rel="noopener noreferrer" href="http://dx.doi.org/10.11184/his.20.3_301" rel="nofollow">DOI</a>)         
+                                </span>
+                                <span class="lang-text" data-lang="en">
+                                    Hiroto Saito, Kentaro Fukuchi. The Effect of Predictability of Visual Motion on the Recognition Process of Self-Attribution, <i>The Transactions of Human Interface Society</i>, 2018, Vol.20, No.3, pp.301-310. (<a target="_blank" rel="noopener noreferrer" href="http://dx.doi.org/10.11184/his.20.3_301" rel="nofollow">DOI</a>, in Japanese)
+                                </span> 
                             </li>
                             <li class="mb-2">
-                                齊藤 寛人, 福地 健太郎. 能動的回転操作における自己帰属感の生起過程の分析, <i>日本バーチャルリアリティ学会論文誌</i>, 2017, Vol.22 No.1, pp.81-90. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.18974/tvrsj.22.1_81" rel="nofollow">DOI</a>)
+                                <span class="lang-text" data-lang="ja">
+                                    齊藤 寛人, 福地 健太郎. 能動的回転操作における自己帰属感の生起過程の分析, <i>日本バーチャルリアリティ学会論文誌</i>, 2017, Vol.22 No.1, pp.81-90. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.18974/tvrsj.22.1_81" rel="nofollow">DOI</a>)
+                                </span>
+                                <span class="lang-text" data-lang="en">
+                                    Hiroto Saito and Kentaro Fukuchi. A Study of the Process of Self-Attribution in Active Rotation Manipulation, <i>Transactions of the Virtual Reality Society of Japan</i>, 2017, Vol.22 No.1, pp.81-90. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.18974/tvrsj.22.1_81" rel="nofollow">DOI</a>, in Japanese)
+                                </span> 
                             </li>
                         </ul>
             
-                        <h4 class="mb-3">査読付き国際会議 - Peer Reviewed International Conferences</h4>
+                        <h4 class="mb-3"><span class="lang-text" data-lang="ja">査読付き国際会議 - </span> Peer Reviewed International Conferences </h4>
                         <ul class="mb-5">
                             <li class="mb-2">
                                 Goki Muramoto, Hiroto Saito, Sohei Wakisaka, and Masahiko Inami. 2024.  Demonstrating real-time slow-motion experience through parallel video presentation. In <i>ACM SIGGRAPH 2024 Emerging Technologies (SIGGRAPH '24)</i>, ACM, New York, NY, USA, Article 5, 1–2. (<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1145/3641517.3664399" rel="nofollow">DOI</a>) 
@@ -524,7 +678,7 @@
 
                         </ul>
                      
-                        <h4 class="mb-3">国内学会 - Domestic Conferences</h4>
+                        <h4 class="mb-3"><span class="lang-text" data-lang="ja">国内学会 - </span>Domestic Conferences <span class="lang-text" data-lang="en">(in Japanese)</span></h4>
                         <ul class="mb-5">
                             <li class="mb-2">
                                 旭博佑, 高下修聡, 齊藤寛人, 前川和純, 門内靖明, 稲見 昌彦. 身体運動周期を用いた没入型ロコモーションインターフェースの検討．第71回 情報処理学会エンタテインメントコンピューティング研究会, 京都, 2024年3月.
@@ -555,7 +709,7 @@
                             </li>
                         </ul>
 
-                        <h4 class="mb-3">講演</h4>
+                        <h4 class="mb-3"><span class="lang-text" data-lang="ja">講演 - </span> Lectures </h4>
                         <ul class="mb-5">
                             <li class="mb-2">
                                 人間-機械協調設計に基づく身体能力・体験の自在化. 招待講演, 昭和大学発達障害医療研究所, 2024年1月26日.
@@ -565,21 +719,21 @@
                             </li>
                         </ul>
 
-                        <h4 class="mb-3">書籍</h4>
+                        <h4 class="mb-3"><span class="lang-text" data-lang="ja">書籍 - </span> Books</h4>
                         <ul class="mb-5">
                             <li class="mb-2">
                                 日本ロボット学会 監修, 西川 鋭 編著. スポーツロボティクス入門-シミュレーション・解析と競技への介入-. オーム社, 2024年10月.（共著）
                             </li>
                         </ul>
 
-                        <h4 class="mb-3">その他 - Others</h4>
+                        <h4 class="mb-3"><span class="lang-text" data-lang="ja">その他 - </span> Misc</h4>
                         <ul class="mb-5">
                             <li class="mb-2">    
                                 齊藤寛人. 運動予測に基づく視覚的運動と自己運動との関連性の認知メカニズムについての分析. 情報処理学会学会誌「情報処理」, 2019, Vol.60 No.9, 研究会推薦博士論文速報.
                             </li>
                         </ul>
                     <hr class="m-5"  id = "awards"/>
-                    <h3 class="mb-5">Awards</h3>
+                    <h3 class="mb-5"><span class="lang-text" data-lang="ja">受賞 - </span> Awards</h3>
                     <ul>
                         <li>
                             Augmented Humans International Conference 2024 Best Paper Award
@@ -628,6 +782,36 @@
             <hr class="m-0" />
         </div>
        
+
+
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const toggleJa = document.getElementById("toggle-ja");
+            const toggleEn = document.getElementById("toggle-en");
+
+            function setLanguage(lang) {
+                document.querySelectorAll(".lang-text").forEach(el => {
+                el.style.display = el.getAttribute("data-lang") === lang ? "inline" : "none";
+                });
+                if (lang === "ja") {
+                toggleJa.classList.add("disabled");
+                toggleEn.classList.remove("disabled");
+                } else {
+                toggleEn.classList.add("disabled");
+                toggleJa.classList.remove("disabled");
+                }
+            }
+
+            toggleJa.addEventListener("click", () => setLanguage("ja"));
+            toggleEn.addEventListener("click", () => setLanguage("en"));
+
+            // 初期設定
+            setLanguage("ja");
+            });
+        </script>
+    
+
     </body>
 </html>
 
