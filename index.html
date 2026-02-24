@@ -35,15 +35,15 @@
             .lang-toggle { cursor: pointer; text-decoration: underline; color: #cfd8e3; margin: 0 0.3em; }
             .lang-toggle.disabled { color: white !important; cursor: default; text-decoration: none; pointer-events: none; }
             .lang-text[data-lang='en'] { display: none; }
-            .navbar-topbar { position: relative; display: flex; align-items: center; width: 100%; gap: 0.6rem; flex-wrap: wrap; }
-            .navbar-text { margin: 0; line-height: 1.05; white-space: normal; font-size: 3.2rem; max-width: 60%; word-break: break-word; }
-            .navbar-lang { position: absolute; top: 0; right: 0; display: flex; align-items: center; gap: 0.4rem; white-space: nowrap; flex-shrink: 0; }
-            html { scroll-padding-top: 110px; }
+            .navbar-topbar { display: flex; flex-direction: column; align-items: flex-start; gap: 0.35rem; width: 100%; }
+            .navbar-text { margin: 0; line-height: 1.05; white-space: normal; font-size: 3.6rem; word-break: break-word; max-width: 100%; }
+            .navbar-lang { display: flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
+            html { scroll-padding-top: 0; }
 
             @media (max-width: 768px) {
-                .navbar-topbar { gap: 0.4rem; align-items: center; }
-                .navbar-text { font-size: clamp(1.9rem, 6vw, 2.6rem); max-width: 70%; }
-                .navbar-lang { top: 4px; right: 6px; }
+                .navbar-topbar { align-items: flex-start; gap: 0.3rem; }
+                .navbar-text { font-size: clamp(2.2rem, 7vw, 2.8rem); max-width: 100%; }
+                .navbar-lang { align-self: flex-start; }
             }
         </style>
         <!DOCTYPE html>
