@@ -57,24 +57,28 @@
                     display: grid;
                     grid-template-columns: 1fr auto;
                     align-items: center;
-                    padding: 0 12px 0 56px;
-                    gap: 0.4rem;
+                    padding: 0 16px 0 56px;
+                    column-gap: 0.6rem;
                 }
                 .navbar-text {
                     font-size: clamp(2.1rem, 6vw, 2.6rem);
                     white-space: nowrap;
-                    max-width: 100%;
+                    max-width: calc(100vw - 56px - 120px);
                     justify-self: center;
                     overflow: hidden;
                     text-overflow: ellipsis;
+                    text-align: center;
                 }
                 .navbar-lang {
                     position: relative;
                     margin-left: 0;
-                    font-size: 0.75rem;
-                    gap: 0.2rem;
+                    font-size: 0.78rem;
+                    gap: 0.25rem;
+                    padding-left: 6px;
+                    padding-right: 4px;
                     justify-self: end;
-                    max-width: 40%;
+                    max-width: 34vw;
+                    white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
                 }
