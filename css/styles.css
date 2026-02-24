@@ -482,7 +482,7 @@ div.works {
   html { scroll-padding-top: 56px; }
   body { padding-top: 56px; }
   nav#sideNav { height: 56px; background: #343a40; }
-  #navbarResponsive { background: #343a40; }
+  #navbarResponsive { background: #343a40; padding-top: 56px; }
   .navbar-topbar + hr { display: none; }
   section[id],
   #home,

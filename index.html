@@ -45,33 +45,31 @@
                 nav#sideNav > button.navbar-toggler {
                     position: absolute;
                     left: 12px;
-                    top: 8px;
+                    top: 10px;
                     z-index: 1100;
                 }
                 .navbar-topbar {
                     position: absolute;
                     left: 60px;
                     right: 12px;
-                    top: 8px;
-                    height: 40px;
-                    display: flex;
+                    top: 10px;
+                    height: 36px;
+                    display: grid;
+                    grid-template-columns: 1fr auto;
                     align-items: center;
-                    gap: 0.35rem;
-                    flex-wrap: nowrap;
-                    padding: 0;
+                    column-gap: 0.4rem;
                 }
                 .navbar-text {
-                    font-size: clamp(1.9rem, 6vw, 2.5rem);
-                    max-width: 60%;
+                    font-size: clamp(2.1rem, 6vw, 2.6rem);
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
                 }
                 .navbar-lang {
-                    position: static;
-                    margin-left: auto;
-                    font-size: 0.85rem;
-                    gap: 0.3rem;
+                    position: relative;
+                    margin-left: 0;
+                    font-size: 0.82rem;
+                    gap: 0.25rem;
                 }
             }
         </style>
