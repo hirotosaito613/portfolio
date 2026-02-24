@@ -148,6 +148,7 @@ window.addEventListener('DOMContentLoaded', event => {
         // drag / mouse wheel manual control
         let isDragging = false;
         let startX = 0;
+        let startY = 0;
         let startScroll = 0;
         let dragMoved = false;
         const dragThreshold = 6;
@@ -173,6 +174,7 @@ window.addEventListener('DOMContentLoaded', event => {
             isDragging = true;
             stopMarquee();
             startX = e.clientX;
+            startY = e.clientY;
             startScroll = scrollX;
             worksTrack.style.cursor = 'grabbing';
             e.preventDefault();
@@ -194,6 +196,47 @@ window.addEventListener('DOMContentLoaded', event => {
             scrollX = wrapScroll(startScroll - dx);
             setTransform();
         });
+
+        // touch support (swipe)
+        worksTrack.addEventListener('touchstart', (e) => {
+            if (isShowAll()) return;
+            const t = e.touches[0];
+            isDragging = true;
+            stopMarquee();
+            startX = t.clientX;
+            startY = t.clientY;
+            startScroll = scrollX;
+            dragMoved = false;
+        }, { passive: true });
+
+        worksTrack.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const t = e.touches[0];
+            const dx = t.clientX - startX;
+            const dy = t.clientY - startY;
+            if (!dragMoved) {
+                if (Math.abs(dy) > Math.abs(dx)) {
+                    // let vertical scroll happen
+                    isDragging = false;
+                    startMarquee();
+                    return;
+                }
+                if (Math.abs(dx) > dragThreshold) dragMoved = true;
+            }
+            scrollX = wrapScroll(startScroll - dx);
+            setTransform();
+            e.preventDefault();
+        }, { passive: false });
+
+        const touchEndHandler = () => {
+            if (isDragging) {
+                isDragging = false;
+                setTimeout(startMarquee, 400);
+                setTimeout(() => { dragMoved = false; }, 50);
+            }
+        };
+        worksTrack.addEventListener('touchend', touchEndHandler);
+        worksTrack.addEventListener('touchcancel', touchEndHandler);
 
         // prevent click on drag
         worksTrack.addEventListener('click', (e) => {

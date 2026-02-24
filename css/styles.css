@@ -459,8 +459,6 @@ div.works {
   transform: translateY(0);
 }
 
-
-
   /*--------------------------------*/
   img{
     width:100%;
@@ -468,6 +466,16 @@ div.works {
   label{
     display:block;
   }
+
+/* Responsive embeds */
+.remodal iframe,
+.works-modal iframe,
+.works-frame {
+  width: 100% !important;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
   label span{
     display:block;
     background-color:#01b6ed;
