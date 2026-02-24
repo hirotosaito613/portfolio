@@ -481,14 +481,11 @@ div.works {
 section[id],
 #works,
 #experience,
-#home {
-  scroll-margin-top: 110px;
-}
-
+#home,
 #education,
 #publications,
 #contact {
-  scroll-margin-top: 70px;
+  scroll-margin-top: 80px;
 }
   label span{
     display:block;
