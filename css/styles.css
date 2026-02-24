@@ -479,8 +479,24 @@ div.works {
 
 /* Mobile header spacing */
 @media (max-width: 768px) {
-  html { scroll-padding-top: 0; }
-  body { padding-top: 0; }
+  html { scroll-padding-top: 56px; }
+  body { padding-top: 56px; }
+  nav#sideNav { height: 56px; }
+  .navbar-topbar + hr { display: none; }
+  section[id],
+  #home,
+  #works,
+  #experience,
+  #education,
+  #publications,
+  #awards,
+  #contact {
+    scroll-margin-top: 56px;
+  }
+}
+
+#contact {
+  min-height: 55vh;
 }
 
   label span{
