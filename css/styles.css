@@ -481,7 +481,8 @@ div.works {
 @media (max-width: 768px) {
   html { scroll-padding-top: 56px; }
   body { padding-top: 56px; }
-  nav#sideNav { height: 56px; }
+  nav#sideNav { height: 56px; background: #343a40; }
+  #navbarResponsive { background: #343a40; }
   .navbar-topbar + hr { display: none; }
   section[id],
   #home,
