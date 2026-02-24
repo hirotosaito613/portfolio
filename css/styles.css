@@ -476,6 +476,20 @@ div.works {
   height: auto;
   aspect-ratio: 16 / 9;
 }
+
+/* Prevent anchored content from hiding under fixed nav */
+section[id],
+#works,
+#experience,
+#home {
+  scroll-margin-top: 110px;
+}
+
+#education,
+#publications,
+#contact {
+  scroll-margin-top: 70px;
+}
   label span{
     display:block;
     background-color:#01b6ed;
