@@ -35,15 +35,15 @@
             .lang-toggle { cursor: pointer; text-decoration: underline; color: #cfd8e3; margin: 0 0.3em; }
             .lang-toggle.disabled { color: white !important; cursor: default; text-decoration: none; pointer-events: none; }
             .lang-text[data-lang='en'] { display: none; }
-            .navbar-topbar { position: relative; display: flex; align-items: center; width: 100%; gap: 0.6rem; flex-wrap: wrap; }
-            .navbar-text { margin: 0; line-height: 1.05; white-space: normal; font-size: 3.2rem; max-width: 100%; word-break: break-word; overflow: visible; }
-            .navbar-lang { position: static; display: flex; align-items: center; gap: 0.4rem; white-space: nowrap; flex-shrink: 0; margin-left: auto; }
+            .navbar-topbar { position: relative; display: flex; align-items: flex-start; width: 100%; gap: 0.6rem; flex-wrap: wrap; }
+            .navbar-text { margin: 0; line-height: 1.05; white-space: normal; font-size: 3.4rem; max-width: 100%; word-break: break-word; }
+            .navbar-lang { position: absolute; top: 0; right: 0; display: flex; align-items: center; gap: 0.4rem; white-space: nowrap; flex-shrink: 0; font-size: 0.95rem; }
             html { scroll-padding-top: 0; }
 
             @media (max-width: 768px) {
-                .navbar-topbar { gap: 0.4rem; align-items: center; padding-left: 0; flex-wrap: wrap; }
-                .navbar-text { font-size: clamp(1.9rem, 5vw, 2.4rem); max-width: 100%; white-space: normal; overflow: visible; }
-                .navbar-lang { position: static; margin-left: 0; }
+                .navbar-topbar { gap: 0.3rem; align-items: center; padding-left: 48px; flex-wrap: wrap; padding-right: 96px; }
+                .navbar-text { font-size: clamp(2rem, 6vw, 2.6rem); max-width: 100%; white-space: normal; word-break: break-word; }
+                .navbar-lang { position: absolute; top: 6px; right: 8px; font-size: 0.9rem; }
             }
         </style>
         <!DOCTYPE html>

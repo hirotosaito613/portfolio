@@ -479,27 +479,8 @@ div.works {
 
 /* Mobile header spacing */
 @media (max-width: 768px) {
-  html { scroll-padding-top: 56px; }
-  body { padding-top: 56px; }
-  nav#sideNav { height: 56px; }
-  #navbarResponsive {
-    position: absolute;
-    top: 56px;
-    left: 0;
-    width: 100%;
-    background: #343a40;
-    z-index: 1040;
-  }
-  section[id],
-  #home,
-  #works,
-  #experience,
-  #education,
-  #publications,
-  #awards,
-  #contact {
-    scroll-margin-top: 56px;
-  }
+  html { scroll-padding-top: 0; }
+  body { padding-top: 0; }
 }
 
   label span{
