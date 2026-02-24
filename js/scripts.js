@@ -41,10 +41,6 @@ window.addEventListener('DOMContentLoaded', event => {
             } else if (bottomOverrideActive) {
                 // 例外状態から復帰: アクティブをリセットして ScrollSpy に委ねる
                 bottomOverrideActive = false;
-                navLinks.forEach((link) => {
-                    link.classList.remove('active');
-                    link.removeAttribute('aria-current');
-                });
                 // ScrollSpy 再計算・即時処理
                 if (scrollSpyInstance && typeof scrollSpyInstance.refresh === 'function') {
                     scrollSpyInstance.refresh();
