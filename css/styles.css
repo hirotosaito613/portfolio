@@ -477,28 +477,6 @@ div.works {
   aspect-ratio: 16 / 9;
 }
 
-/* Prevent anchored content from hiding under fixed nav */
-section[id],
-#works,
-#experience,
-#home,
-#education,
-#publications,
-#contact {
-  scroll-margin-top: 0;
-}
-
-#home,
-#works,
-#experience {
-  scroll-margin-top: 110px;
-}
-
-#education,
-#publications,
-#contact {
-  scroll-margin-top: 70px;
-}
   label span{
     display:block;
     background-color:#01b6ed;
@@ -11630,8 +11608,8 @@ section.resume-section {
   align-items: center;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 4rem;
   max-width: 75rem;
 }
 section.resume-section .resume-section-content {
@@ -11647,7 +11625,7 @@ section.resume-section .resume-section-content {
   section.resume-section {
     padding-left: 3rem;
     padding-right: 3rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 4.5rem;
   }
 }
