@@ -479,6 +479,9 @@ div.works {
 
 /* Mobile header spacing */
 @media (max-width: 768px) {
+  html {
+    scroll-padding-top: 64px;
+  }
   body {
     padding-top: 64px;
   }
@@ -495,15 +498,17 @@ div.works {
   }
 
   /* prevent anchor content from hiding under header on mobile */
-  section.resume-section,
+  section[id],
   #home,
   #works,
   #experience,
   #education,
   #publications,
+  #awards,
   #contact {
-    scroll-margin-top: 72px;
+    scroll-margin-top: 64px;
   }
+  #awards { scroll-margin-top: 80px; }
 }
 
   label span{

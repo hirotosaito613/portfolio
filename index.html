@@ -35,14 +35,14 @@
             .lang-toggle { cursor: pointer; text-decoration: underline; color: #cfd8e3; margin: 0 0.3em; }
             .lang-toggle.disabled { color: white !important; cursor: default; text-decoration: none; pointer-events: none; }
             .lang-text[data-lang='en'] { display: none; }
-            .navbar-topbar { position: relative; display: flex; align-items: center; width: 100%; gap: 0.6rem; flex-wrap: wrap; }
-            .navbar-text { margin: 0; line-height: 1.05; white-space: normal; font-size: 3.2rem; max-width: 60%; word-break: break-word; }
+            .navbar-topbar { position: relative; display: flex; align-items: center; width: 100%; gap: 0.6rem; flex-wrap: nowrap; }
+            .navbar-text { margin: 0; line-height: 1.05; white-space: nowrap; font-size: 3.2rem; max-width: 60%; word-break: break-word; overflow: hidden; text-overflow: ellipsis; }
             .navbar-lang { position: absolute; top: 0; right: 0; display: flex; align-items: center; gap: 0.4rem; white-space: nowrap; flex-shrink: 0; }
             html { scroll-padding-top: 0; }
 
             @media (max-width: 768px) {
                 .navbar-topbar { gap: 0.4rem; align-items: center; }
-                .navbar-text { font-size: clamp(1.9rem, 6vw, 2.6rem); max-width: 70%; }
+                .navbar-text { font-size: clamp(1.9rem, 6vw, 2.6rem); max-width: 60%; }
                 .navbar-lang { top: 4px; right: 6px; }
             }
         </style>
