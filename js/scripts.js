@@ -20,7 +20,8 @@ window.addEventListener('DOMContentLoaded', event => {
         // If the user reaches (or almost reaches) the bottom, force Contact to be active
         const navLinks = document.querySelectorAll('#sideNav .nav-link');
         const contactLink = document.querySelector('#sideNav a[href="#contact"]');
-        const bottomTolerance = 120; // px (mobile address bar/toolbar分を許容)
+        const bottomTolerance = 32; // px
+        const contactSection = document.querySelector('#contact');
         const setContactActive = () => {
             if (!contactLink) return;
             navLinks.forEach((link) => link.classList.remove('active'));
@@ -28,9 +29,11 @@ window.addEventListener('DOMContentLoaded', event => {
             contactLink.setAttribute('aria-current', 'true');
         };
         const handleBottomHighlight = () => {
-            const docHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-            const reachedBottom = window.innerHeight + window.scrollY >= (docHeight - bottomTolerance);
-            if (reachedBottom) {
+            if (!contactSection) return;
+            const rect = contactSection.getBoundingClientRect();
+            const nearContactBottom = rect.bottom - window.innerHeight <= bottomTolerance;
+            const atPageBottom = window.innerHeight + window.scrollY >= (document.documentElement.scrollHeight - bottomTolerance);
+            if (nearContactBottom || atPageBottom) {
                 // 少し遅らせて ScrollSpy の処理より後に実行し、上書きする
                 setTimeout(setContactActive, 0);
             }
