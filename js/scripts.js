@@ -23,6 +23,30 @@ window.addEventListener('DOMContentLoaded', event => {
         const bottomTolerance = 32; // px
         const contactSection = document.querySelector('#contact');
         let bottomOverrideActive = false;
+
+        // 非Contactリンククリック時は強制状態を解除して即座にScrollSpy再計算
+        navLinks.forEach((link) => {
+            if (link === contactLink) return;
+            link.addEventListener('click', () => {
+                bottomOverrideActive = false;
+                if (scrollSpyInstance) scrollSpyInstance._activeTarget = null;
+                navLinks.forEach((l) => {
+                    l.classList.remove('active');
+                    l.removeAttribute('aria-current');
+                });
+                setTimeout(() => {
+                    if (scrollSpyInstance && typeof scrollSpyInstance.refresh === 'function') {
+                        scrollSpyInstance.refresh();
+                    }
+                    if (scrollSpyInstance && typeof scrollSpyInstance._process === 'function') {
+                        scrollSpyInstance._process();
+                    } else {
+                        window.dispatchEvent(new Event('scroll'));
+                    }
+                }, 50);
+            });
+        });
+
         const setContactActive = () => {
             if (!contactLink) return;
             navLinks.forEach((link) => link.classList.remove('active'));
@@ -39,14 +63,20 @@ window.addEventListener('DOMContentLoaded', event => {
                 bottomOverrideActive = true;
                 setTimeout(setContactActive, 0);
             } else if (bottomOverrideActive) {
-                // 例外状態から復帰: アクティブをリセットして ScrollSpy に委ねる
+                // 例外状態から復帰: ScrollSpy に委ねる
                 bottomOverrideActive = false;
+                // いったん手動でアクティブを外す（強制付与した Contact をクリア）
+                if (scrollSpyInstance) scrollSpyInstance._activeTarget = null;
+                navLinks.forEach((link) => {
+                    link.classList.remove('active');
+                    link.removeAttribute('aria-current');
+                });
                 // ScrollSpy 再計算・即時処理
                 if (scrollSpyInstance && typeof scrollSpyInstance.refresh === 'function') {
                     scrollSpyInstance.refresh();
                 }
-                if (scrollSpyInstance && (scrollSpyInstance.process || scrollSpyInstance._process)) {
-                    (scrollSpyInstance.process || scrollSpyInstance._process).call(scrollSpyInstance);
+                if (scrollSpyInstance && typeof scrollSpyInstance._process === 'function') {
+                    scrollSpyInstance._process();
                 } else {
                     // フォールバック: scroll イベントで再評価
                     window.dispatchEvent(new Event('scroll'));
