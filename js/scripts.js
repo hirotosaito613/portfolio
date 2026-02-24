@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // Activate Bootstrap scrollspy on the main nav element
     const sideNav = document.body.querySelector('#sideNav');
     if (sideNav) {
-        new bootstrap.ScrollSpy(document.body, {
+        const scrollSpyInstance = new bootstrap.ScrollSpy(document.body, {
             target: '#sideNav',
             offset: 56,
         });
@@ -22,6 +22,7 @@ window.addEventListener('DOMContentLoaded', event => {
         const contactLink = document.querySelector('#sideNav a[href="#contact"]');
         const bottomTolerance = 32; // px
         const contactSection = document.querySelector('#contact');
+        let bottomOverrideActive = false;
         const setContactActive = () => {
             if (!contactLink) return;
             navLinks.forEach((link) => link.classList.remove('active'));
@@ -35,7 +36,25 @@ window.addEventListener('DOMContentLoaded', event => {
             const atPageBottom = window.innerHeight + window.scrollY >= (document.documentElement.scrollHeight - bottomTolerance);
             if (nearContactBottom || atPageBottom) {
                 // 少し遅らせて ScrollSpy の処理より後に実行し、上書きする
+                bottomOverrideActive = true;
                 setTimeout(setContactActive, 0);
+            } else if (bottomOverrideActive) {
+                // 例外状態から復帰: アクティブをリセットして ScrollSpy に委ねる
+                bottomOverrideActive = false;
+                navLinks.forEach((link) => {
+                    link.classList.remove('active');
+                    link.removeAttribute('aria-current');
+                });
+                // ScrollSpy 再計算・即時処理
+                if (scrollSpyInstance && typeof scrollSpyInstance.refresh === 'function') {
+                    scrollSpyInstance.refresh();
+                }
+                if (scrollSpyInstance && (scrollSpyInstance.process || scrollSpyInstance._process)) {
+                    (scrollSpyInstance.process || scrollSpyInstance._process).call(scrollSpyInstance);
+                } else {
+                    // フォールバック: scroll イベントで再評価
+                    window.dispatchEvent(new Event('scroll'));
+                }
             }
         };
         window.addEventListener('scroll', handleBottomHighlight, { passive: true });
