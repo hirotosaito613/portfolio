@@ -493,6 +493,17 @@ div.works {
     background: #343a40;
     z-index: 1040;
   }
+
+  /* prevent anchor content from hiding under header on mobile */
+  section.resume-section,
+  #home,
+  #works,
+  #experience,
+  #education,
+  #publications,
+  #contact {
+    scroll-margin-top: 72px;
+  }
 }
 
   label span{
