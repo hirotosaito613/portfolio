@@ -32,10 +32,9 @@
 
         <style>
             body { font-family: sans-serif;}
-            .lang-toggle { cursor: pointer; text-decoration: underline; color: #cfd8e3; margin: 0 0.3em; }
+            .lang-toggle { cursor: pointer; text-decoration: underline; color: gray; margin: 0 0.3em; }
             .lang-toggle.disabled { color: white !important; cursor: default; text-decoration: none; pointer-events: none; }
             .lang-text[data-lang='en'] { display: none; }
-            .navbar-lang { display: flex; align-items: center; gap: 0.4rem; margin-left: 0.8rem; }
         </style>
         <!DOCTYPE html>
         
@@ -52,10 +51,6 @@
             <h2 class="navbar-text">
             Hiroto Saito
             </h2>
-            <div class="navbar-lang">
-                <span class="lang-toggle" data-toggle="ja" id="toggle-ja">日本語</span> 
-                <span class="lang-toggle" data-toggle="en" id="toggle-en">English</span>
-            </div>
             <hr class="mb-5" />
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
@@ -66,6 +61,9 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#publications">Publications</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    <br>
+                    <span class="lang-toggle" data-toggle="ja" id="toggle-ja">日本語</span> 
+                    <span class="lang-toggle" data-toggle="en" id="toggle-en">English</span>
                 </ul>
             </div>
         </nav>
@@ -103,13 +101,12 @@
                             <br><br>    
                         </span>
                     </p>
-                </div>
-            </section> 
-            <hr class="m-0" />
+                
+            
                  
-            <!-- Works-->
-            <section class="resume-section" id="works">
-                <div class="resume-section-content">
+                    <!-- Works-->
+                    <br  id = "works"/>
+            
             
                     <h3 class="mb-2">
                         <span class="lang-text" data-lang="ja">Works</span>
@@ -120,7 +117,6 @@
                     <div class="works-actions">
                         <button class="btn btn-sm btn-outline-secondary works-toggle-btn" id="works-show-all">see more works</button>
                     </div>
-
                     <div class="works-marquee" id="works-wrapper">
                         <button class="works-nav works-nav-prev" id="works-prev" aria-label="Previous">&#10094;</button>
                         <button class="works-nav works-nav-next" id="works-next" aria-label="Next">&#10095;</button>
@@ -778,7 +774,8 @@
                 
 
             </section> 
-            <hr class="m-0" />
+            
+            <hr class="m-5" />
 
             <!-- Education-->
             <section class="resume-section" id="education">
@@ -867,14 +864,13 @@
                             </h5>
                         </div>
                     </div>
-                </div>   
-            </section> 
-            <hr class="m-0" />    
+                   
+                   
+                 
                   
 
-            <!-- Experience-->
-            <section class="resume-section" id="experience">
-                <div class="resume-section-content">
+                     <!-- Experience-->
+                    <hr class="m-5"  id = "experience"/>
                     <h3 class="mb-5">
                         <span class="lang-text" data-lang="ja">職歴 - Experience</span>
                         <span class="lang-text" data-lang="en">Experience</span>
@@ -1146,13 +1142,6 @@
                                 齊藤寛人. 運動予測に基づく視覚的運動と自己運動との関連性の認知メカニズムについての分析. 情報処理学会学会誌「情報処理」, 2019, Vol.60 No.9, 研究会推薦博士論文速報.
                             </li>
                         </ul>
-                </div>
-            </section>
-            <hr class="m-0" />
-
-             <!-- awards-->
-            <section class="resume-section" id="awards">
-                <div class="resume-section-content">
                     <hr class="m-5"  id = "awards"/>
                     <h3 class="mb-5"><span class="lang-text" data-lang="ja">受賞 - </span> Awards</h3>
                     <ul>
