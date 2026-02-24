@@ -16,6 +16,23 @@ window.addEventListener('DOMContentLoaded', event => {
             target: '#sideNav',
             offset: 56,
         });
+
+        // If the user reaches (or almost reaches) the bottom, force Contact to be active
+        const navLinks = document.querySelectorAll('#sideNav .nav-link');
+        const contactLink = document.querySelector('#sideNav a[href="#contact"]');
+        const bottomTolerance = 2; // px
+        const setContactActive = () => {
+            if (!contactLink) return;
+            navLinks.forEach((link) => link.classList.remove('active'));
+            contactLink.classList.add('active');
+        };
+        const handleBottomHighlight = () => {
+            const reachedBottom = window.innerHeight + window.scrollY >= (document.documentElement.scrollHeight - bottomTolerance);
+            if (reachedBottom) setContactActive();
+        };
+        window.addEventListener('scroll', handleBottomHighlight, { passive: true });
+        window.addEventListener('resize', handleBottomHighlight);
+        handleBottomHighlight();
     };
 
     // Collapse responsive navbar when toggler is visible
