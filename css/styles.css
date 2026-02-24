@@ -477,6 +477,24 @@ div.works {
   aspect-ratio: 16 / 9;
 }
 
+/* Mobile header spacing */
+@media (max-width: 768px) {
+  body {
+    padding-top: 64px;
+  }
+  nav#sideNav {
+    height: 64px;
+  }
+  #navbarResponsive {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #343a40;
+    z-index: 1040;
+  }
+}
+
   label span{
     display:block;
     background-color:#01b6ed;
