@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', event => {
     if (sideNav) {
         new bootstrap.ScrollSpy(document.body, {
             target: '#sideNav',
-            offset: 120,
+            offset: 74,
         });
     };
 
