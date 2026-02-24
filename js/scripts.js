@@ -20,15 +20,20 @@ window.addEventListener('DOMContentLoaded', event => {
         // If the user reaches (or almost reaches) the bottom, force Contact to be active
         const navLinks = document.querySelectorAll('#sideNav .nav-link');
         const contactLink = document.querySelector('#sideNav a[href="#contact"]');
-        const bottomTolerance = 2; // px
+        const bottomTolerance = 120; // px (mobile address bar/toolbar分を許容)
         const setContactActive = () => {
             if (!contactLink) return;
             navLinks.forEach((link) => link.classList.remove('active'));
             contactLink.classList.add('active');
+            contactLink.setAttribute('aria-current', 'true');
         };
         const handleBottomHighlight = () => {
-            const reachedBottom = window.innerHeight + window.scrollY >= (document.documentElement.scrollHeight - bottomTolerance);
-            if (reachedBottom) setContactActive();
+            const docHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+            const reachedBottom = window.innerHeight + window.scrollY >= (docHeight - bottomTolerance);
+            if (reachedBottom) {
+                // 少し遅らせて ScrollSpy の処理より後に実行し、上書きする
+                setTimeout(setContactActive, 0);
+            }
         };
         window.addEventListener('scroll', handleBottomHighlight, { passive: true });
         window.addEventListener('resize', handleBottomHighlight);
