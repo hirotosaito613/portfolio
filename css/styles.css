@@ -322,6 +322,7 @@ iframe.works-frame {
 img.works {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   }
 
 img.works-modal {
@@ -335,9 +336,129 @@ p.works-modal-text {
 }
 
 div.works {
-   display: flex;
-   flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* horizontal marquee for Works */
+.works-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.works-toggle-btn {
+  font-size: 0.9rem;
+}
+
+.works-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  cursor: grab;
+  scroll-behavior: auto;
+  margin: 0 auto;
+  max-width: calc(230px * 4 + 1rem * 3);
+}
+
+.works-track {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.works-marquee .img-thumbnail {
+  flex: 0 0 230px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.img-thumbnail p.works { margin: 0; }
+
+/* nav arrows */
+.works-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.works-nav:hover {
+  background: rgba(0,0,0,0.5);
+}
+
+.works-nav-prev { left: 6px; }
+.works-nav-next { right: 6px; }
+
+@media (max-width: 768px) {
+  .works-marquee .img-thumbnail {
+    flex-basis: 180px;
   }
+  .works-track {
+    gap: 0.75rem;
+  }
+  .works-marquee {
+    max-width: 100%;
+  }
+}
+
+/* Show-all grid mode */
+.works-show-all .works-marquee {
+  overflow: visible;
+  cursor: default;
+}
+
+.works-show-all .works-track {
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 1rem;
+}
+
+.works-show-all .works-track .clone {
+  display: none;
+}
+
+.works-show-all .works-nav {
+  display: none;
+}
+
+/* thumbnail hover title */
+.works-thumb-title {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  padding: 6px 8px;
+  background: rgba(0, 0, 0, 0.62);
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  pointer-events: none;
+}
+
+.img-thumbnail:hover .works-thumb-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 
   /*--------------------------------*/
@@ -11499,4 +11620,3 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
-
