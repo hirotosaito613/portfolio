@@ -88,6 +88,44 @@ window.addEventListener('DOMContentLoaded', event => {
         handleBottomHighlight();
     };
 
+    // Ensure modal content order: media (img/iframe) -> title -> Abstract...
+    document.querySelectorAll('.remodal').forEach((modal) => {
+        const title = modal.querySelector('h3');
+        const firstHeadingAfter = modal.querySelector('h4');
+        if (!title || !firstHeadingAfter) return;
+        const children = Array.from(modal.children);
+        const media = [];
+        for (const node of children) {
+            if (node === firstHeadingAfter) break;
+            if (node.tagName === 'IMG' || node.tagName === 'IFRAME') {
+                media.push(node);
+            }
+        }
+        // keep only first media; remove extras to防ぐ cross-modal誤混入
+        if (media.length > 1) {
+            media.slice(1).forEach((node) => node.remove());
+        }
+        // if no media and fallback needed, inject default
+        if (media.length === 0) {
+            const defaults = {
+                teaming: { src: 'assets/img/mmt.png', alt: 'machine mediated teaming' },
+                kendama: { src: 'assets/img/kendama.png', alt: 'kendama' }
+            };
+            const id = modal.getAttribute('data-remodal-id');
+            if (defaults[id]) {
+                const img = document.createElement('img');
+                img.src = defaults[id].src;
+                img.alt = defaults[id].alt;
+                img.className = 'works-modal';
+                modal.insertBefore(img, title);
+                media.push(img);
+            }
+        } else {
+            // ensure the kept media is before the title
+            modal.insertBefore(media[0], title);
+        }
+    });
+
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
