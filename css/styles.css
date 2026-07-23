@@ -426,6 +426,8 @@ div.works {
 
 .works-marquee .img-thumbnail {
   flex: 0 0 230px;
+  width: 230px;
+  height: 230px;
   aspect-ratio: 1 / 1;
   background: transparent;
   border: none;
@@ -469,6 +471,8 @@ div.works {
 @media (max-width: 768px) {
   .works-marquee .img-thumbnail {
     flex-basis: 180px;
+    width: 180px;
+    height: 180px;
   }
   .works-track {
     gap: 0.75rem;
