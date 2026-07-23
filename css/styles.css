@@ -436,10 +436,18 @@ div.works {
   position: relative;
   overflow: hidden;
 }
+.works-marquee .img-thumbnail > a.social-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .img-thumbnail p.works {
   margin: 0;
   width: 100%;
   height: 100%;
+}
+.img-thumbnail img.works {
+  display: block;
 }
 
 /* nav arrows */
